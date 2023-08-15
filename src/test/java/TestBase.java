@@ -1,9 +1,14 @@
+import helpers.ScreenshotListener;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import static helpers.Driver.driver;
+import static helpers.Driver.closeDriver;
 
-public class BaseTest {
+@Listeners(ScreenshotListener.class)
+public class TestBase {
 
     @BeforeMethod
     public void setUp() {
@@ -12,6 +17,6 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        driver().quit();
+        closeDriver();
     }
 }

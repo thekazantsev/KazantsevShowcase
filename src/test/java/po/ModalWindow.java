@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import static helpers.Driver.driver;
 
 public class ModalWindow {
+    private static final String expectedTitle = "Thanks for submitting the form";
     private static final By modalWindowTitle  = By.cssSelector(".modal-title");
     private static final By studentNameValue  = By.xpath("//td[.='Student Name']/following-sibling::td");
     private static final By studentEmailValue = By.xpath("//td[.='Student Email']/following-sibling::td");
@@ -15,6 +16,10 @@ public class ModalWindow {
     private static final By pictureValue      = By.xpath("//td[.='Picture']/following-sibling::td");
     private static final By addressValue      = By.xpath("//td[.='Address']/following-sibling::td");
     private static final By stateAndCityValue = By.xpath("//td[.='State and City']/following-sibling::td");
+
+    public static String expectedTitle() {
+        return expectedTitle;
+    }
 
     public static String title() {
         return driver()

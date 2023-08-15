@@ -19,4 +19,11 @@ public class Driver {
          }
          return webDriver;
      }
+
+     public static void closeDriver() {
+         if (webDriver != null) {
+             webDriver.quit();
+             webDriver = null;
+         }
+     }
 }
