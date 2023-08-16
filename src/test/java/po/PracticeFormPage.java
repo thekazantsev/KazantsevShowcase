@@ -151,7 +151,7 @@ public class PracticeFormPage {
             .click();
     }
 
-    public static void fillForm(FormData generatedData) {
+    public static void fillFormWith(FormData generatedData) {
         fillFirstName(generatedData.firstName);
         fillLastName(generatedData.lastName);
         fillEmail(generatedData.email);

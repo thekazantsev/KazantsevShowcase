@@ -9,6 +9,7 @@ import static helpers.Driver.closeDriver;
 
 @Listeners(ScreenshotListener.class)
 public class TestBase {
+    final String BASE_URL = "https://demoqa.com";
 
     @BeforeMethod
     public void setUp() {

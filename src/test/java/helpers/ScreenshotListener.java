@@ -21,7 +21,7 @@ public class ScreenshotListener implements ITestListener {
         File screenshot = ((TakesScreenshot)driver()).getScreenshotAs(OutputType.FILE);
 
         try {
-            Allure.addAttachment(testResult.getTestName() + " screenshot", new FileInputStream(screenshot));
+            Allure.addAttachment(testResult.getTestName() + " screenshot" , new FileInputStream(screenshot));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }

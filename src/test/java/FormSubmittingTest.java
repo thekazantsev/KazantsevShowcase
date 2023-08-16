@@ -10,16 +10,14 @@ import static helpers.Driver.driver;
 
 public class FormSubmittingTest extends TestBase {
 
-    private final String URL = "https://demoqa.com/automation-practice-form";
-
     @Test
-    public void formSubmittingTest() {
+    public void automationPracticeFormTest() {
         //Arrange
         FormData generatedData = FormData.generate();
-        driver().get(URL);
+        driver().get(BASE_URL.concat("/automation-practice-form"));
 
         //Act
-        PracticeFormPage.fillForm(generatedData);
+        PracticeFormPage.fillFormWith(generatedData);
         PracticeFormPage.clickSubmitButton();
 
         //Assert
