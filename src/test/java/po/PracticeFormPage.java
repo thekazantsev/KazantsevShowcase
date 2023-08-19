@@ -12,7 +12,8 @@ import helpers.FormData;
 
 import static helpers.Driver.driver;
 
-public class PracticeFormPage {
+public class PracticeFormPage extends PageBase {
+    public static final String URL = BASE_URL + "/automation-practice-form";
     private static final By firstNameField   = By.id("firstName");
     private static final By lastNameField    = By.xpath("//input[@id='lastName']");
     private static final By emailField       = By.cssSelector("input[id='userEmail']");
@@ -26,7 +27,6 @@ public class PracticeFormPage {
     private static final By cityList         = By.xpath("//div[text()='Select City']");
     private static final By submitButton     = By.id("submit");
     private static String subjectsFieldValue;
-    public static final String URL = "https://demoqa.com//automation-practice-form";
 
     @Step
     public static void fillFirstName(String firstName) {
@@ -147,9 +147,8 @@ public class PracticeFormPage {
 
     @Step
     public static void clickSubmitButton() {
-        driver()
-            .findElement(submitButton)
-            .click();
+        WebElement element = driver().findElement(submitButton);
+        ((JavascriptExecutor)driver()).executeScript("arguments[0].click();", element);
     }
 
     public static void fillFormWith(FormData generatedData) {

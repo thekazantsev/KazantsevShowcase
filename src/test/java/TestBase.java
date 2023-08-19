@@ -12,11 +12,11 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() {
-        driver();
+        driver().manage().window().maximize();
     }
 
     @AfterMethod
     public void tearDown() {
-        closeDriver();
+//        closeDriver();
     }
 }
