@@ -26,6 +26,7 @@ public class PracticeFormPage {
     private static final By cityList         = By.xpath("//div[text()='Select City']");
     private static final By submitButton     = By.id("submit");
     private static String subjectsFieldValue;
+    public static final String URL = "https://demoqa.com//automation-practice-form";
 
     @Step
     public static void fillFirstName(String firstName) {

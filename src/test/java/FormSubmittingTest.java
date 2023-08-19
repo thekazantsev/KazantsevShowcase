@@ -14,7 +14,7 @@ public class FormSubmittingTest extends TestBase {
     public void automationPracticeFormTest() {
         //Arrange
         FormData generatedData = FormData.generate();
-        driver().get(BASE_URL.concat("/automation-practice-form"));
+        driver().get(PracticeFormPage.URL);
 
         //Act
         PracticeFormPage.fillFormWith(generatedData);
@@ -22,16 +22,16 @@ public class FormSubmittingTest extends TestBase {
 
         //Assert
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(ModalWindow.title(), ModalWindow.expectedTitle());
-        softAssert.assertEquals(ModalWindow.studentNameValue(), generatedData.studentName);
-        softAssert.assertEquals(ModalWindow.studentEmailValue(), generatedData.email);
-        softAssert.assertEquals(ModalWindow.genderValue(), generatedData.gender);
-        softAssert.assertEquals(ModalWindow.mobileValue(), generatedData.mobile);
-        softAssert.assertEquals(ModalWindow.dateOfBirthValue(), generatedData.dateOfBirth);
-        softAssert.assertEquals(ModalWindow.subjectsValue(), PracticeFormPage.subjectsFieldValue());
-        softAssert.assertEquals(ModalWindow.pictureValue(), generatedData.pictureName);
-        softAssert.assertEquals(ModalWindow.addressValue(), generatedData.currentAddress);
-        softAssert.assertEquals(ModalWindow.stateAndCityValue(), generatedData.stateAndCityExpected);
+        softAssert.assertEquals(ModalWindow.title(), ModalWindow.expectedTitle(), "Title doesn't match expected");
+        softAssert.assertEquals(ModalWindow.studentNameValue(), generatedData.studentName, "Name doesn't match expected");
+        softAssert.assertEquals(ModalWindow.studentEmailValue(), generatedData.email, "Email doesn't match expected");
+        softAssert.assertEquals(ModalWindow.genderValue(), generatedData.gender, "Gender doesn't match expected");
+        softAssert.assertEquals(ModalWindow.mobileValue(), generatedData.mobile, "Mobile doesn't match expected");
+        softAssert.assertEquals(ModalWindow.dateOfBirthValue(), generatedData.dateOfBirth, "Date of birth doesn't match expected");
+        softAssert.assertEquals(ModalWindow.subjectsValue(), PracticeFormPage.subjectsFieldValue(), "Subjects doesn't match expected");
+        softAssert.assertEquals(ModalWindow.pictureValue(), generatedData.pictureName, "Picture name doesn't match expected");
+        softAssert.assertEquals(ModalWindow.addressValue(), generatedData.currentAddress, "Address doesn't match expected");
+        softAssert.assertEquals(ModalWindow.stateAndCityValue(), generatedData.stateAndCityExpected, "State and City doesn't match expected");
         softAssert.assertAll();
     }
 }
