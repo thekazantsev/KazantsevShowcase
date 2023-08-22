@@ -1,5 +1,6 @@
 package po;
 
+import helpers.Property;
 import io.qameta.allure.Step;
 
 import org.openqa.selenium.*;
@@ -13,7 +14,7 @@ import helpers.FormData;
 import static helpers.Driver.driver;
 
 public class PracticeFormPage extends PageBase {
-    public static final String URL = BASE_URL + "/automation-practice-form";
+    public static final String URL = BASE_URL + Property.get("practice.form.urn");
     private static final By firstNameField   = By.id("firstName");
     private static final By lastNameField    = By.xpath("//input[@id='lastName']");
     private static final By emailField       = By.cssSelector("input[id='userEmail']");
