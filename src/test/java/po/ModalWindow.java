@@ -1,6 +1,10 @@
 package po;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static helpers.Driver.driver;
 
@@ -22,6 +26,9 @@ public class ModalWindow {
     }
 
     public static String title() {
+        new WebDriverWait(driver(), Duration.ofSeconds(10))
+            .until(ExpectedConditions.visibilityOf(driver().findElement(modalWindowTitle)));
+
         return driver()
                 .findElement(modalWindowTitle)
                 .getText();
