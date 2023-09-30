@@ -4,7 +4,7 @@
 
 * Clone the repository
 ```
-git clone git@github.com:thekazantsev/SimbirsoftSDET.git
+git clone git@github.com:thekazantsev/KazantsevShowcase.git
 ```
 
 * `mvn clean test` - run your tests
